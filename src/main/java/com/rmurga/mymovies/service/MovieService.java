@@ -20,8 +20,12 @@ public class MovieService {
         return movieRepository.getallAndOrdered();
     }
 
-    public List<Movie> getbyStocklist(int stocklistid) {
+    public List<Movie> getByStocklist(int stocklistid) {
         return movieRepository.getbyStocklist(stocklistid);
+    }
+
+    public List<Movie> findByNameContaining(String name) {
+        return movieRepository.findByNameContaining(name);
     }
 
 }

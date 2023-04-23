@@ -5,6 +5,7 @@ import com.rmurga.mymovies.service.MovieService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,7 +27,14 @@ public class ListController {
 
     @RequestMapping("/moviesbystocklist")
     public String listMoviesByStocklist(int stocklistid, Model model) {
-        List<Movie> movies = movieService.getbyStocklist(stocklistid);
+        List<Movie> movies = movieService.getByStocklist(stocklistid);
+        model.addAttribute("movies", movies);
+        return "list";
+    }
+
+    @RequestMapping("/find")
+    public String listMoviesByStocklist(@RequestParam("query") String s, Model model) {
+        List<Movie> movies = movieService.findByNameContaining(s);
         model.addAttribute("movies", movies);
         return "list";
     }
