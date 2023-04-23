@@ -9,7 +9,7 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" th:href="@{/}">
             <img src="img/logo.png" width="60" height="60" alt="">
             Movie store</a>
     </nav>
@@ -22,7 +22,7 @@
                     <img th:src="${movie.image}" src="https://flim-1-0-2.s3.eu-central-1.amazonaws.com/thumbs/thumbnail/2f65f862dbe811ea84df10ddb1aba44f.jpeg" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 th:text="${movie.name}" class="card-title">Movie Name</h5>
-                        <span class="badge rounded-pill text-bg-warning" th:text="${movie.stocklist.name}"></span>
+                        <a th:href="@{/moviesbystocklist(stocklistid=${movie.stocklist.id})}"><span class="badge rounded-pill text-bg-warning" th:text="${movie.stocklist.name}"></span></a>
                         <p th:text="${movie.description}" class="card-text">Movie Description</p>
                         <div class="card-footer text-muted">
                         <a href="#" class="btn btn-primary">See details</a>

@@ -23,4 +23,11 @@ public class ListController {
         model.addAttribute("movies", themovies);
         return "list";
     }
+
+    @RequestMapping("/moviesbystocklist")
+    public String listMoviesByStocklist(int stocklistid, Model model) {
+        List<Movie> movies = movieService.getbyStocklist(stocklistid);
+        model.addAttribute("movies", movies);
+        return "list";
+    }
 }

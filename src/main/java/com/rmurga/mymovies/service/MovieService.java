@@ -17,7 +17,11 @@ public class MovieService {
     }
 
     public List<Movie> getMovies() {
-        return movieRepository.findAll();
+        return movieRepository.getallAndOrdered();
+    }
+
+    public List<Movie> getbyStocklist(int stocklistid) {
+        return movieRepository.getbyStocklist(stocklistid);
     }
 
 }
