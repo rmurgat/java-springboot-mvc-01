@@ -34,4 +34,13 @@ public class Stocklist {
     public void setHttp_web(String http_web) {
         this.http_web = http_web;
     }
+
+    @Override
+    public String toString() {
+        return "Stocklist{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", http_web='" + http_web + '\'' +
+                '}';
+    }
 }

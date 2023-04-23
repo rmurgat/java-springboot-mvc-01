@@ -28,4 +28,8 @@ public class MovieService {
         return movieRepository.findByNameContaining(name);
     }
 
+    public Movie save(Movie movie) {
+        return movieRepository.save(movie);
+    }
+
 }

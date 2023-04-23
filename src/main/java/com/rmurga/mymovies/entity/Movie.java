@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table(name = "movies")
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer Id;
     private String name;
     private String description;
@@ -53,5 +53,16 @@ public class Movie {
 
     public void setStocklist(Stocklist stocklist) {
         this.stocklist = stocklist;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "Id=" + Id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", image='" + image + '\'' +
+                ", stocklist=" + stocklist.toString() +
+                '}';
     }
 }
